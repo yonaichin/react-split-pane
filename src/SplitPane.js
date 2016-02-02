@@ -20,7 +20,8 @@ export default React.createClass({
     getDefaultProps() {
         return {
             split: 'vertical',
-            minSize: 0
+            minSize: 0,
+            maxSize: 0
         };
     },
 
@@ -78,6 +79,15 @@ export default React.createClass({
                         }
                         ref.setState({
                             size: newSize
+                        });
+                    }
+                    if (newSize >= parseInt(this.props.maxSize)) {
+                        var maxSize = parseInt(this.props.maxSize)
+                        if (this.props.onChange) {
+                            this.props.onChange(maxSize);
+                        }
+                        ref.setState({
+                            size: maxSize
                         });
                     }
                 }
