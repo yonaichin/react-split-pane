@@ -143,7 +143,7 @@ export default React.createClass({
         if (split === 'vertical') {
             this.merge(style, {
                 flexDirection: 'row',
-                height: '100%',
+                height: 'calc(100% - 52px)',
                 position: 'absolute',
                 left: 0,
                 right: 0
